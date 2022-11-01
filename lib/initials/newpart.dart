@@ -3,14 +3,14 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:login/models/userListModel.dart';
 
-class NewPage extends StatefulWidget {
-  NewPage({required this.item, super.key});
-  UserList item;
+class NewPart extends StatefulWidget {
+  NewPart({required this.item, super.key});
+  final UserList item;
   @override
-  State<NewPage> createState() => _NewPageState();
+  State<NewPart> createState() => _NewPartState();
 }
 
-class _NewPageState extends State<NewPage> {
+class _NewPartState extends State<NewPart> {
   @override
   Widget build(BuildContext context) =>
       OrientationBuilder(builder: (context, orientation) {

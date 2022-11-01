@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login/initials/HomePage.dart';
 import 'package:login/initials/login.dart';
+import 'package:login/initials/mainScreen.dart';
 import 'package:login/manager/sectionManagement.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -68,7 +69,7 @@ class _SpalashScreenState extends State<SpalashScreen> {
       // print(username);
       if (token != null && token != "") {
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => HomePage()));
+            context, MaterialPageRoute(builder: (context) => MainScreen()));
       } else {
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const LoginPage()));

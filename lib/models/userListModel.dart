@@ -19,7 +19,7 @@ class UserList {
       email: json["email"]?.toString(),
       firstName: json["first_name"]?.toString(),
       lastName: json["last_name"]?.toString(),
-      avatar: json["avatar" + '1']?.toString(),
+      avatar: json["avatar"]?.toString(),
     );
   }
 }

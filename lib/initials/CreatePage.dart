@@ -54,7 +54,7 @@ class _CreatePageState extends State<CreatePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Create Data"),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.pink.shade400,
       ),
       body: hideUI
           ? Center(
@@ -90,6 +90,7 @@ class _CreatePageState extends State<CreatePage> {
                         border: OutlineInputBorder(), hintText: 'Enter Job'),
                   ),
                   SizedBox(height: 20),
+
                   // ElevatedButton(
                   //   style: ButtonStyle(
                   //     foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
@@ -119,7 +120,7 @@ class _CreatePageState extends State<CreatePage> {
                         foregroundColor:
                             MaterialStateProperty.all<Color>(Colors.white),
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          Colors.black87,
+                          Colors.pink.shade400,
                         ),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -158,7 +159,7 @@ class _CreatePageState extends State<CreatePage> {
                                   Navigator.of(ctx).pop();
                                 },
                                 child: Container(
-                                  color: Colors.black,
+                                  color: Colors.pink.shade400,
                                   padding: const EdgeInsets.all(14),
                                   child: const Text(
                                     "okay",

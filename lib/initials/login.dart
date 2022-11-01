@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:login/initials/HomePage.dart';
+import 'package:login/initials/mainScreen.dart';
 import 'package:login/manager/sectionManagement.dart';
 import 'package:login/models/modelPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -271,7 +272,7 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => HomePage()));
+                                      builder: (context) => MainScreen()));
                             } else {
                               _displaySnackBar(
                                   context, " Invalid Credentials...");
