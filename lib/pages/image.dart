@@ -4,7 +4,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:login/initials/fileList.dart';
 import 'package:open_file/open_file.dart';
 
 class Image extends StatefulWidget {

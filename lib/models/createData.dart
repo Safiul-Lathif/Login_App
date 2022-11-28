@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final createData = createDataFromJson(jsonString);
-
 import 'dart:convert';
 
 CreateData createDataFromJson(String str) =>
@@ -35,4 +31,50 @@ class CreateData {
         "id": id,
         "createdAt": createdAt.toIso8601String(),
       };
+}
+
+class Create {
+  String? name;
+  String? job;
+
+  Create({this.name, this.job});
+
+  toJson() {
+    return {"name": name, "job": job};
+  }
+
+  fromJson(jsonData) {
+    return Create(name: jsonData['name'], job: jsonData['job']);
+  }
+}
+
+class Todo {
+  int? id;
+  String? title;
+  String? description;
+  bool? status;
+
+  Todo({this.id, this.title, this.description, this.status}) {
+    id = this.id;
+    title = this.title;
+    description = this.description;
+    status = this.status;
+  }
+
+  toJson() {
+    return {
+      "id": id,
+      "description": description,
+      "title": title,
+      "status": status
+    };
+  }
+
+  fromJson(jsonData) {
+    return Todo(
+        id: jsonData['id'],
+        title: jsonData['title'],
+        description: jsonData['description'],
+        status: jsonData['status']);
+  }
 }

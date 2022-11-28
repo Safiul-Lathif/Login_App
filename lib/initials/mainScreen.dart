@@ -3,18 +3,21 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:login/initials/grid_page.dart';
+
 import 'package:login/initials/login.dart';
 import 'package:login/initials/multipl.dart';
 import 'package:login/initials/popup.dart';
-import 'package:login/initials/uplode_image.dart';
+
 import 'package:login/models/modelPage.dart';
+import 'package:login/pages/CreatePage.dart';
+import 'package:login/pages/HomePage.dart';
+import 'package:login/pages/list.dart';
+import 'package:login/pages/uplode_image.dart';
+import 'package:login/pages/worker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'CreatePage.dart';
-import 'HomePage.dart';
-import 'expanded_page.dart';
-import 'image_picker.dart';
+import '../pages/grid_page.dart';
+import '../pages/image_picker.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -26,7 +29,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int index = 2;
   final screens = [
-    CreatePage(),
+    page23(),
     ImagePicker(),
     HomePage(),
     UplodeImage(),
@@ -60,7 +63,6 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: CurvedNavigationBar(
         // backgroundColor: Colors.transparent,
         height: 50,
-
         index: 2,
         items: items,
         onTap: (index) => setState(() => this.index = index),

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:login/initials/CreatePage.dart';
-import 'package:login/initials/HomePage.dart';
 import 'package:login/initials/SpalashScreen.dart';
-import 'package:login/initials/expanded_page.dart';
 import 'package:login/initials/login.dart';
 import 'package:login/initials/mainScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -35,7 +32,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MainScreen(),
+      home: SpalashScreen(),
     );
   }
 }

@@ -5,14 +5,14 @@ import 'package:login/models/userListModel.dart';
 import 'package:http/http.dart' as http;
 
 class UserListWidget extends StatefulWidget {
-  const UserListWidget({super.key});
+  UserListWidget({super.key});
   @override
   State<UserListWidget> createState() => _UserListWidgetState();
 }
 
 class _UserListWidgetState extends State<UserListWidget> {
   final List<UserList> _list = [];
-
+  late UserList item;
   int page = 1;
 
   ScrollController scrollController = ScrollController();
@@ -40,7 +40,7 @@ class _UserListWidgetState extends State<UserListWidget> {
       OrientationBuilder(builder: (context, orientation) {
         final isweb = MediaQuery.of(context).size.width < 600;
         return Container(
-          color: Color(0xff121212),
+          color: const Color(0xff121212),
           child: ListView.builder(
               controller: scrollController,
               itemCount: _list.length,
@@ -63,42 +63,35 @@ class _UserListWidgetState extends State<UserListWidget> {
                                 fit: BoxFit.fill,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 15,
                             ),
                             GestureDetector(
                               onTap: () {
                                 setState(() {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => NewPart(
-                                                item: _list[users],
-                                              )));
+                                  item = _list[index];
                                 });
                               },
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   Text(
-                                    _list[index].firstName.toString() +
-                                        " " +
-                                        _list[index].lastName.toString(),
-                                    style: TextStyle(
+                                    "${_list[index].firstName} ${_list[index].lastName}",
+                                    style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 14,
                                         color: Colors.white),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   Text(
                                     _list[index].email.toString(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 12, color: Colors.white70),
                                   ),
                                 ],
@@ -107,7 +100,7 @@ class _UserListWidgetState extends State<UserListWidget> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       )
                     ],
