@@ -8,7 +8,6 @@ import 'package:http/http.dart' as http;
 import 'package:login/initials/mainScreen.dart';
 import 'package:login/manager/sectionManagement.dart';
 import 'package:login/models/modelPage.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -20,14 +19,13 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  static const snackBar = SnackBar(
-    content: Text('Login Scuessfully'),
-  );
   bool isClick = true;
   GlobalKey<FormBuilderState> formKey = GlobalKey<FormBuilderState>();
   String username = '';
   String password = '';
+  @override
   void initState() {
+    super.initState();
     setState(() {
       isClick = !isClick;
     });
@@ -64,17 +62,10 @@ class _LoginPageState extends State<LoginPage> {
     SessionManager preferences = SessionManager();
     if (response != null) {
       await preferences.setAuthToken(response.token.toString());
-      //  Navigator.pushReplacement(
-      //      context, MaterialPageRoute(builder: (context) => HomePage()));
       return true;
     } else {
       return false;
     }
-    // SharedPreferences preferences = await SharedPreferences.getInstance();
-    // await preferences.setString("username", username);
-    // await preferences.setString("password", password);
-    // Navigator.pushReplacement(
-    //   context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 
   @override
@@ -262,7 +253,8 @@ class _LoginPageState extends State<LoginPage> {
                               .toString();
                           password = formKey.currentState!.value['Password']
                               .toString();
-                          await _navigatetohome().then((value) {
+                          await 
+                          _navigatetohome().then((value) {
                             // ignore: void_checks
                             // print(value);
                             if (value == true) {

@@ -1,13 +1,11 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:async';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login/initials/login.dart';
 import 'package:login/initials/mainScreen.dart';
 import 'package:login/manager/sectionManagement.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SpalashScreen extends StatefulWidget {
   const SpalashScreen({super.key});
@@ -17,9 +15,9 @@ class SpalashScreen extends StatefulWidget {
 }
 
 class _SpalashScreenState extends State<SpalashScreen> {
-  @override
   String? username;
   String? password;
+  @override
   void initState() {
     super.initState();
     _navigatetonHome();
@@ -59,16 +57,11 @@ class _SpalashScreenState extends State<SpalashScreen> {
 
   void _navigatetonHome() async {
     await Future.delayed(const Duration(seconds: 6), () async {
-      SessionManager preferences = new SessionManager();
+      SessionManager preferences = SessionManager();
       String? token = await preferences.getAuthToken();
-      //  SharedPreferences preferences = await SharedPreferences.getInstance();
-      // String? username = preferences.getString("username");
-      // print(token);
-
-      // print(username);
       if (token != null && token != "") {
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => MainScreen()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const MainScreen()));
       } else {
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const LoginPage()));
