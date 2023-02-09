@@ -1,11 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:login/initials/newpart.dart';
 import 'package:login/models/userListModel.dart';
 import 'package:http/http.dart' as http;
 
 class UserListWidget extends StatefulWidget {
-  UserListWidget({super.key});
+  const UserListWidget({super.key});
   @override
   State<UserListWidget> createState() => _UserListWidgetState();
 }
@@ -129,7 +128,6 @@ class _UserListWidgetState extends State<UserListWidget> {
       setState(() {
         page++;
         _list.addAll(tagObjs);
-
         users = users + 2;
       });
       // print(tagObjs);

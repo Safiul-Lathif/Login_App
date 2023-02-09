@@ -14,12 +14,6 @@ class SessionManager {
     prefs.setString(authToken, token);
   }
 
-  // Future<String> getAuthToken() async {
-  // final SharedPreferences pref = await SharedPreferences.getInstance();
-  // String authToken;
-  // authToken = pref.getString(this.authToken) ?? null;
-  // return authToken;
-
 //get value from shared preferences
   Future<String?> getAuthToken() async {
     final SharedPreferences pref = await SharedPreferences.getInstance();
